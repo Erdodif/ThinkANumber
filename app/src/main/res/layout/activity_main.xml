@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Gondoltam egy számra"
             android:textSize="25sp"/>
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonbackround"
@@ -55,11 +55,19 @@
             android:text="0"
             android:textSize="25sp"
             android:id="@+id/texViewSzam"/>
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonbackround"
             android:text="-"
             android:id="@+id/buttonMinusz"/>
     </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tippel"
+        android:id="@+id/buttonTipp"
+        android:layout_alignParentBottom="true"
+        />
+
 </RelativeLayout>

@@ -2,21 +2,11 @@ package com.example.thinkanumber
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import kotlin.random.Random as Random1
+import kotlin.random.Random
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var hp1: ImageView
-    lateinit var hp2: ImageView
-    lateinit var hp3: ImageView
-    lateinit var hp4: ImageView
-    lateinit var buttonMinusz: Button
-    lateinit var buttonPlusz: Button
-    lateinit var buttonTipp: Button
-    lateinit var textViewSzam: TextView
     private var tippeltszam: Int = 0
     private var gondoltSzam: Int = 0
     private var elet: Int = 0
@@ -30,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 // TODO: Felugróablak
             } else {
                 tippeltszam++
-                textViewSzam.setText(tippeltszam)
+                texViewSzam.text = tippeltszam.toString()
             }
         }
         buttonMinusz.setOnClickListener {
@@ -38,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 // TODO: Felugróablak
             } else {
                 tippeltszam--
-                textViewSzam.setText(tippeltszam)
+                texViewSzam.text = tippeltszam.toString()
             }
         }
         buttonTipp.setOnClickListener {
@@ -58,19 +48,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun eletMinusz(){
+    private fun eletMinusz(){
+        elet--
         when (elet){
             3 -> {
-                hp4.setImageResource(R.drawable.heart1)
+                imageViewHP4.setImageResource(R.drawable.heart1)
             }
             2 -> {
-                hp3.setImageResource(R.drawable.heart1)
+                imageViewHP3.setImageResource(R.drawable.heart1)
             }
             1 -> {
-                hp2.setImageResource(R.drawable.heart1)
+                imageViewHP2.setImageResource(R.drawable.heart1)
             }
             0 -> {
-                hp1.setImageResource(R.drawable.heart1)
+                imageViewHP1.setImageResource(R.drawable.heart1)
                 // TODO: Felugró Ablak game over
             }
         }
@@ -79,14 +70,7 @@ class MainActivity : AppCompatActivity() {
     fun init() {
         tippeltszam = 1
         elet = 4
-        gondoltSzam = Random1.nextInt(0,10)
-        buttonMinusz = findViewById(R.id.buttonMinusz)
-        buttonPlusz = findViewById(R.id.buttonPlusz)
-        buttonTipp = findViewById(R.id.buttonTipp)
-        hp1 = findViewById(R.id.imageViewHP1)
-        hp2 = findViewById(R.id.imageViewHP2)
-        hp3 = findViewById(R.id.imageViewHP3)
-        hp4 = findViewById(R.id.imageViewHP4)
+        gondoltSzam = Random.nextInt(0,10)
     }
 
 
